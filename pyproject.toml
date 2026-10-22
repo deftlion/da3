@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "depth_anything_3"
+version = "0.1.0"
+description = "Model-building subset of ByteDance Depth Anything 3 (see depth_anything_3/VENDOR.md)."
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = [
+    "addict>=2.4,<3",
+    "einops>=0.8,<1",
+    "omegaconf>=2.3,<3",
+    "huggingface-hub",
+    "numpy",
+    "pillow",
+    "torch",
+    "transformers",
+]
+
+[tool.setuptools.packages.find]
+include = ["depth_anything_3*"]
+
+[tool.setuptools.package-data]
+depth_anything_3 = ["configs/*.yaml", "LICENSE", "VENDOR.md"]
